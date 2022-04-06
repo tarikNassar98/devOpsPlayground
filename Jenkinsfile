@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment{
+    cred = 352708296901.dkr.ecr.eu-central-1.amazonaws.com
+    }
+
 
         stages {
         stage('Build') {
@@ -9,9 +13,21 @@ pipeline {
 
            sh 'cd simple_webserver'
             echo 'build NeW docker image'
-            sh 'pwd'
-            sh 'docker build ./simple_webserver -t image:0.0.8'
+
+
+            sh '''
+
+            aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin ${cred}
+            docker build -t simple_web_server_tarik .
+             docker tag simple_web_server_tarik:${BUILD_NUMBER}${BRANCH_NAME} ${cred}/simple_web_server_tarik:${BUILD_NUMBER}${BRANCH_NAME}
+             docker push ${cred}/simple_web_server_tarik:${BRANCH_NAME}${BUILD_NUMBER}
+                '''
+
+
+
+
         }
+
         }
 
         stage('Test') {
