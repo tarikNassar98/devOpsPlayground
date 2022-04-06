@@ -10,7 +10,7 @@ pipeline {
             sh 'docker build dockerfile -t image:0.0.2'
         }
         stage('Test') {
-            steps {
+            steps  {
                 echo 'Testing. .'
             }
         }
