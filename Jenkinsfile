@@ -18,7 +18,7 @@ pipeline {
             sh '''
 
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 352708296901.dkr.ecr.us-east-1.amazonaws.com
-            docker build -t simple_web_server_tarik .
+            docker build -t simple_web_server_tarik  .
              docker tag simple_web_server_tarik:${BUILD_NUMBER}${BRANCH_NAME} ${cred}/simple_web_server_tarik:${BUILD_NUMBER}${BRANCH_NAME}
              docker push ${cred}/simple_web_server_tarik:${BRANCH_NAME}${BUILD_NUMBER}
                 '''
