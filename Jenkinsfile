@@ -6,13 +6,11 @@ pipeline {
             steps{
            echo 'move to simple_web_server directory ...'
             sh 'pwd'
-            dir(simple_webserver'){
+            cd 'simple_webserver'
             echo 'build NeW docker image'
             sh 'pwd'
             sh 'docker build ./ -t image:0.0.5'
         }
-        }
-
         }
 
         stage('Test') {
