@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps{
            echo 'move to simple_web_server directory ...'
-            sh 'pwd'
+
             sh "cd simple_webserver"
             echo 'build NeW docker image'
             sh 'pwd'
