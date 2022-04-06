@@ -2,15 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Simple WebServer') {
-            when { anyOf { branch "master"; branch "dev" }}
-            steps {
-                echo 'Building..'
-                sh '''
-                cd simple_webserver
-                # docker build
-                '''
-            }
+        stages {
+        stage('Build') {
+           echo 'move to simple_web_server directory ...'
+            sh 'cd simple_webserver'
+            echo 'build docker image'
+            sh 'docker build dockerfile -t image:0.0.1'
         }
         stage('Test') {
             steps {
