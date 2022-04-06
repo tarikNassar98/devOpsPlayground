@@ -9,7 +9,7 @@ pipeline {
            sh 'cd simple_webserver'
             echo 'build NeW docker image'
             sh 'pwd'
-            sh 'docker build ./ -t image:0.0.5'
+            sh 'docker build ./simple_webserver -t image:0.0.5'
         }
         }
 
