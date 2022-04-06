@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    environment{
-    cred = 352708296901.dkr.ecr.eu-central-1.amazonaws.com
+    environment  {
+    cred = '352708296901.dkr.ecr.eu-central-1.amazonaws.com'
     }
 
 
