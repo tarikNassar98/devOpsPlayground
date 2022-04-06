@@ -7,7 +7,7 @@ pipeline {
            echo 'move to simple_web_server directory ...'
             sh 'cd simple_webserver'
             echo 'build NeW docker image'
-            sh 'docker build dockerfile -t image:0.0.5'
+            sh 'docker build ./ -t image:0.0.5'
         }
         }
 
