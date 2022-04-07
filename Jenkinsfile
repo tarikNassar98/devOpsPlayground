@@ -12,7 +12,7 @@ pipeline {
            echo 'move to simple_web_server directory ...'
 
            sh 'cd simple_webserver'
-            echo 'build NeW docker image'
+            echo 'build NeW docker images'
 
 
             sh '''
