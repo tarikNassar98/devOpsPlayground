@@ -10,7 +10,7 @@ pipeline {
            when { anyOf { branch "master"; branch "dev" } }
             steps{
            echo 'move to simple_web_server directory ...'
-
+            echo 'fsafsa'
            sh 'cd simple_webserver'
             echo 'build NeW docker images'
 
