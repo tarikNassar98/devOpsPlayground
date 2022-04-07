@@ -36,6 +36,7 @@ aws ecr get-login-password --region eu-central-1 | docker login --username AWS -
         }
         stage('Deploy') {
             steps {
+            echo 'asf'
                 echo 'its Deploying....'
             }
         }
