@@ -6,7 +6,7 @@ pipeline {
 
 
         stages {
-        stage('Buwild') {
+        stage('Build') {
            when { anyOf { branch "master"; branch "dev" } }
             steps{
            echo 'move to simple_web_server directory ...'
