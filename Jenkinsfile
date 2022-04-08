@@ -11,7 +11,7 @@ pipeline {
             steps{
            echo 'move to simple_web_server directory ...'
            sh 'cd simple_webserver'
-            echo 'build  docker images 0.0.3'
+            echo 'build  docker images 0.0.5'
 
 
             sh '''
