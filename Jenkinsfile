@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
            when { anyOf { branch "master"; branch "dev" } }
             steps{
+            echo 'yEaH'
            echo 'move to simple_web_server directory ...'
            sh 'cd simple_webserver'
             echo 'build  docker images 0.0.5'
