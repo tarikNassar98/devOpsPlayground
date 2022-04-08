@@ -6,12 +6,13 @@ pipeline {
 
 
         stages {
-        stage('Buwild') {
+        stage('Build') {
            when { anyOf { branch "master"; branch "dev" } }
             steps{
+            echo 'yEaH'
            echo 'move to simple_web_server directory ...'
            sh 'cd simple_webserver'
-            echo 'build  docker images 0.0.2'
+            echo 'build  docker images 0.0.5'
 
 
             sh '''
@@ -31,13 +32,14 @@ aws ecr get-login-password --region eu-central-1 | docker login --username AWS -
 
         stage('Test') {
             steps  {
-                echo 'Testing. .'
+                echo 'Test. .'
+                sh 'exit(1)'
             }
         }
-
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+            echo 'asf'
+                echo 'its Deploying....'
             }
         }
     }
